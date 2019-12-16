@@ -1,7 +1,10 @@
 import { createStore } from 'redux'
 
+import Movies from '../Movies'
+
 const initState = {
-    currentPage: "home"
+    currentPage: "home",
+    movies: Movies,
 }
 
 const reducer = (state = initState, action) => {

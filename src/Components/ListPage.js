@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import Movies from '../Movies'
 
@@ -9,7 +10,7 @@ class ListPage extends React.Component {
             <div>
                 <h1>My listing</h1>
                 {
-                    Movies.map((movie) => {
+                    this.props.movies.map((movie) => {
                         return (
                             <div>
 
@@ -27,4 +28,10 @@ class ListPage extends React.Component {
 
 }
 
-export default ListPage
+let mapStateToProps = (state) => {
+    return {
+        movies: state.movies
+    }
+}
+
+export default connect(mapStateToProps)(ListPage);
